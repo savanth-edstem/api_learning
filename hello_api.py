@@ -11,11 +11,12 @@ def helloworld():
 
 
 @app.route('/info', methods=['GET'])
-def personaldata():
+def personal_data():
     if request.method == 'GET':
-        details = {"name": "savanth", "profession": "developer", "mail id": "savanthks13055@gmail.com"}
-        for detail in details:
-            return jsonify(detail)
+        details = {"name": "savanth",
+                   "profession": "developer",
+                   "mail id": "savanthks13055@gmail.com"}
+        return jsonify(details)
 
 
 if __name__ == '__main__':
