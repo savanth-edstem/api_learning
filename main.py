@@ -19,5 +19,20 @@ def personal_data():
         return jsonify(details)
 
 
+@app.route('/input', methods=['POST'])
+def input():
+    body = request.json
+    return body
+
+
+@app.route('/add', methods=['POST'])
+def addition():
+    numbers = request.json
+    sum = 0
+    for number in numbers['num']:
+        sum = sum + number
+    return str(sum)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
